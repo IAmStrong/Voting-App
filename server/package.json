@@ -1,0 +1,31 @@
+{
+  "name": "voting_app",
+  "version": "1.0.0",
+  "description": "This App counts users votes and select the winner between set of entries",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive",
+    "test:watch": "npm run test -- --watch"
+  },
+  "author": "Artem Zhylko",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.1.1",
+    "chai-immutable": "^1.6.0",
+    "mocha": "^3.5.0"
+  },
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "redux": "^3.7.2",
+    "socket.io": "^2.0.3"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}
