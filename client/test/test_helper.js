@@ -5,12 +5,12 @@ import chaiImmutable from 'chai-immutable';
 const { JSDOM } = jsdom;
 
 const dom = new JSDOM('<!doctype html><html><body></body></html>');
-const win = dom.defaultView;
+const win = dom.window;
 
-const { window } = dom.window;
-
-global.document = dom;
+global.document = win.document;
 global.window = win;
+
+const { window } = dom;
 
 Object.keys(window).forEach((key) => {
     if (!(key in global)) global[key] = window[key];
